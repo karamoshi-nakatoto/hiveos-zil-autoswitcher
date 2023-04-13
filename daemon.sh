@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 apiUrl="$HIVEOS_API_URL"
 authToken="$HIVEOS_AUTH_TOKEN"
