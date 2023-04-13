@@ -20,8 +20,6 @@ Or the provided `docker-compose.yml` file:
 $ docker-compose up
 ```
 
-For explanation about the required environment variables, check out `.env.schema`
-
 ## Environment variables
 
 In order for the script to work, you need to provide a few environment variables:
