@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  daemon:
+    build: .
+    image: hiveos-zil-autoswitcher
+    environment:
+      - "HIVEOS_API_URL=$HIVEOS_API_URL"
+      - "HIVEOS_AUTH_TOKEN=$HIVEOS_AUTH_TOKEN"
+      - "PRIMARY_AND_ZIL_FS=$PRIMARY_AND_ZIL_FS"
+      - "PRIMARY_FS=$PRIMARY_FS"
+    restart: unless-stopped

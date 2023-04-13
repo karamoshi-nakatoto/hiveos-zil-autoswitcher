@@ -1,0 +1,7 @@
+.env
+.env.schema
+.dockerignore
+docker-compose.yml
+Dockerfile
+.git
+LICENSE
