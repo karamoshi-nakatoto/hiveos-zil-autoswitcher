@@ -6,7 +6,7 @@ primaryAndZilFs="$PRIMARY_AND_ZIL_FS"
 primaryFs="$PRIMARY_FS"
 
 switchFs() {
-  curl "$apiUrl" -X PATCH \
+  curl "$apiUrl" -X PATCH -sSL \
     -H "Content-Type: application/json" \
     -H "X-API-Version: 2.8" \
     -H "Authorization: Bearer $authToken" \
