@@ -21,6 +21,9 @@ COPY --from=build-env /tini /
 ENTRYPOINT ["/tini", "--"]
 
 WORKDIR /app
+
+RUN apk add --no-cache curl
+
 # Copy app files
 COPY daemon.sh .
 
