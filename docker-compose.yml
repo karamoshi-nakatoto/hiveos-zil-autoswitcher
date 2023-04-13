@@ -2,8 +2,7 @@ version: "3"
 
 services:
   daemon:
-    build: .
-    image: hiveos-zil-autoswitcher
+    image: ghcr.io/karamoshi-nakatoto/hiveos-zil-autoswitcher:latest
     environment:
       - "HIVEOS_API_URL=$HIVEOS_API_URL"
       - "HIVEOS_AUTH_TOKEN=$HIVEOS_AUTH_TOKEN"
