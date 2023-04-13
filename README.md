@@ -30,7 +30,7 @@ In order for the script to work, you need to provide a few environment variables
 
 - `HIVEOS_AUTH_TOKEN` - You can generate this token by going to Account -> Sessions -> Generate new Personal API-token
 
-- `PRIMARY_AND_ZIL_FS` and `PRIMARY_FS` - These are the IDs of the two Flightsheets the script will be switching between. `PRIMARY_FS` is the FS your miner will be running most of the time and `PRIMARY_AND_ZIL_FS` is usually a dual mining FS which is only used for a few minutes during each ZIL mining window.
+- `PRIMARY_FS` and `PRIMARY_AND_ZIL_FS` - These are the IDs of the two Flightsheets the script will be switching between. `PRIMARY_FS` is the FS your miner will be running most of the time and `PRIMARY_AND_ZIL_FS` is usually a dual mining FS which is only used for a few minutes during each ZIL mining window.
 
 You can find them by using the Network panel in the browser inspector:
 
