@@ -1,4 +1,5 @@
 #!/usr/bin/env sh
+# shellcheck shell=sh
 
 apiUrl="$HIVEOS_API_URL"
 authToken="$HIVEOS_AUTH_TOKEN"
@@ -25,11 +26,11 @@ getTimeUntilNextEpoch() {
   unix=$((lastEpoch / 1000000))
 
   now="$(date +%s)"
-  diff=$(($now - $unix))
+  diff=$((now - unix))
   # We estimate that zil epochs are about 3960 seconds and a mining window is
   # about 120 seconds.
   # Source: https://devex.zilliqa.com/dsbk?network=https%3A%2F%2Fapi.zilliqa.com
-  untilNext=$((unix - $now + 3960 - 120))
+  untilNext=$((unix - now + 3960 - 120))
 
   echo "$untilNext"
 }
@@ -37,24 +38,24 @@ getTimeUntilNextEpoch() {
 while true;
 do
   diff=$(getTimeUntilNextEpoch)
-  echo $diff
-  if [ $diff -lt 0 ]; then
+  echo "$diff"
+  if [ "$diff" -lt 0 ]; then
     # Do nothing
     true
   else
-    if [ $diff -lt 100 ]; then
+    if [ "$diff" -lt 100 ]; then
       echo switching to nexa+zil
       switchFs "$primaryAndZilFs"
       echo waiting for next block...
       while true;
       do
         diff=$(getTimeUntilNextEpoch)
-        if [ $diff -gt 1000 ]; then
+        if [ "$diff" -gt 1000 ]; then
           echo new block found
           break
         fi
         
-        echo -n .
+        echo .
         sleep 5
       done
 
