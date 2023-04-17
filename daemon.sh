@@ -31,7 +31,9 @@ do
     # Do nothing
     true
   else
-    if [ "$diff" -lt 100 ]; then
+    # The CrazyPool seems to indicate the time when ZIL window ends so we have
+    # to switch a few minutes before it. 
+    if [ "$diff" -lt 300 ]; then
       echo switching to nexa+zil
       switchFs "$primaryAndZilFs"
 
